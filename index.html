@@ -422,6 +422,46 @@
   }
   .back-to-top.visible { opacity: 1; visibility: visible; }
   .back-to-top:hover { background: var(--accent); transform: translateY(-4px); }
+
+  /* ── 画像モーダル ── */
+  .zoomable {
+    cursor: zoom-in;
+    transition: opacity 0.2s;
+  }
+  .zoomable:hover { opacity: 0.85; }
+  .img-modal-overlay {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(20,18,15,0.92);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
+    padding: 2rem;
+  }
+  .img-modal-overlay.active { opacity: 1; visibility: visible; }
+  .img-modal-overlay img {
+    max-width: 92vw; max-height: 88vh;
+    object-fit: contain;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+    transform: scale(0.94);
+    transition: transform 0.25s;
+  }
+  .img-modal-overlay.active img { transform: scale(1); }
+  .img-modal-close {
+    position: fixed; top: 1.2rem; right: 1.5rem;
+    width: 44px; height: 44px;
+    background: rgba(253,251,248,0.12);
+    border: 1px solid rgba(253,251,248,0.25);
+    color: var(--warm-white); font-size: 1.3rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+    line-height: 1;
+  }
+  .img-modal-close:hover { background: var(--accent); }
+  .img-modal-hint {
+    position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+    font-size: 0.72rem; letter-spacing: 0.12em;
+    color: rgba(253,251,248,0.4); pointer-events: none;
+  }
 </style>
 </head>
 <body>
@@ -790,5 +830,44 @@ window.addEventListener('scroll', function() {
 
 <!-- トップへ戻るボタン -->
 <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+<!-- 画像モーダル -->
+<div class="img-modal-overlay" id="imgModal">
+  <button class="img-modal-close" id="imgModalClose">✕</button>
+  <img src="" alt="" id="imgModalImg">
+  <p class="img-modal-hint">クリックまたは ESC で閉じる</p>
+</div>
+
+<script>
+// 画像モーダル
+(function(){
+  var overlay = document.getElementById('imgModal');
+  var modalImg = document.getElementById('imgModalImg');
+  var closeBtn = document.getElementById('imgModalClose');
+
+  document.querySelectorAll('#ai-workflow img').forEach(function(img){
+    img.classList.add('zoomable');
+    img.addEventListener('click', function(){
+      modalImg.src = this.src;
+      modalImg.alt = this.alt;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal(){
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+  });
+})();
+<\/script>
 </body>
 </html>
