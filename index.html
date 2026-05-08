@@ -595,7 +595,7 @@
     <!-- Video 02 -->
     <article class="video-item">
       <div class="video-thumb">
-        <video src="videos/sayaka_sns.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;display:block;object-fit:cover;"></video>
+        <video src="videos/sayaka-auto-ver3.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;display:block;object-fit:cover;"></video>
       </div>
       <div class="video-meta">
         <span class="tag">SNS 自動化</span>
@@ -609,7 +609,7 @@
       <dl class="psr">
         <div><dt>Problem</dt><dd>SNS 発信では、「毎回ゼロから考える」こと自体が継続の大きな負担になっていた。さらに、投稿ごとに空気感・口調・世界観がブレやすく、"同じ人格として発信し続ける"ことが難しいという課題があった。特に Threads・Instagram・リール向けテキストでは、媒体ごとの最適化と世界観維持を両立する必要があり、発信者の負担が大きくなっていた。</dd></div>
         <div><dt>Solution</dt><dd>Claude API を活用し、テーマ・時間帯・商品情報を入力するだけで、Threads 投稿文・Instagram 用本文・ハッシュタグ・リール短文・画像生成プロンプトを一括生成するブラウザ完結型ツールを設計・実装。さらに、Notion に過去投稿・人格設定・トーン・発信ルールを蓄積し、「Sayaka」という AI 人格を継続的に再利用できる構造を構築。単なる文章生成ではなく、"同じ人格が発信しているように見える一貫性"を重視したプロンプト設計を行った。Vercel 上へデプロイすることで、環境構築不要・URL だけで即利用できる運用も実現。</dd></div>
-        <div><dt>Result</dt><dd>「毎回考える」作業を大幅に削減し、テーマ入力だけで複数 SNS 向けコンテンツを継続量産できる状態を実現。投稿頻度の維持だけでなく、人格・世界観・言葉遣いの統一によってブランド一貫性も向上。また、Notion に投稿資産を蓄積することで、過去コンテンツを AI が再利用しながら継続的に"人格成長"できる基盤を構築。個人発信者でも、少人数運用で長期的な SNS ブランド構築が可能になった。</dd></div>
+        <div><dt>Result</dt><dd>「毎回考える」作業を大幅に削減し、テーマ入力だけで複数 SNS 向けコンテンツを継続量産できる状態を実現。投稿頻度の維持だけでなく、人格・世界観・言葉遣いの統一によってブランド一貫性も向上。また、Notion に投稿資産を蓄積することで、過去コンテンツを AI が再利用しながら継続的に"人格成長"できる基盤を構築。過去投稿との重複や表現パターンの偏りも参照しながら生成を行うことで、「同じことばかり言ってしまう」問題を軽減し、長期運用でも発信の鮮度を維持できる構造を実現した。個人発信者でも、少人数運用で長期的な SNS ブランド構築が可能になった。</dd></div>
       </dl>
       <p class="design-note"><strong>設計思想：</strong>「完璧な一本を書く」のではなく、「人格と世界観を維持したまま継続量産する」ことをコンセプトに設計。Threads の会話感・Instagram の情緒性・リール向け短文テンポなど、各媒体ごとの特性をプロンプトへ組み込みながらも、"Sayakaらしさ"が崩れない構造を重視した。また、Notion を AI の記憶領域として活用することで、単発生成ではなく「蓄積→再利用→発信改善」が循環する AI 人格運用を実現。発信継続の摩擦を極限まで減らす UX を最優先に設計している。</p>
     </article>
