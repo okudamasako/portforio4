@@ -839,14 +839,13 @@ window.addEventListener('scroll', function() {
 </div>
 
 <script>
-// 画像モーダル
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   var overlay = document.getElementById('imgModal');
   var modalImg = document.getElementById('imgModalImg');
   var closeBtn = document.getElementById('imgModalClose');
 
   document.querySelectorAll('#ai-workflow img').forEach(function(img){
-    img.classList.add('zoomable');
+    img.style.cursor = 'zoom-in';
     img.addEventListener('click', function(){
       modalImg.src = this.src;
       modalImg.alt = this.alt;
@@ -867,7 +866,7 @@ window.addEventListener('scroll', function() {
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') closeModal();
   });
-})();
-<\/script>
+});
+</script>
 </body>
 </html>
