@@ -308,7 +308,7 @@
   .arch-item > .video-meta { padding-top: 1.5rem; }
   .arch-item > .design-note { padding-bottom: 2rem; }
   /* ── ABOUT ── */
-  .about { background: var(--cream); }
+  .about { background: var(--warm-white); }
   .about-inner {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 5rem; align-items: center;
@@ -618,10 +618,67 @@
 </section>
 
 <!-- 
+  【AI ワークフロー・知識蓄積セクション】
+  Claude・Notion・GitHub を活用した AI 人格運用・知識蓄積・継続生成の運用画面を紹介します。
+-->
+<section id="ai-workflow" style="background: var(--warm-white);">
+  <p class="section-label">AI Workflow &amp; Knowledge Base</p>
+  <h2 class="section-title">AI運用・知識蓄積</h2>
+  <div class="divider"></div>
+  <p class="section-sub">Claude・Notion・GitHub を活用し、AI人格運用・知識蓄積・継続生成を実際に行っている運用画面です。単なるツール利用ではなく、「蓄積 → 再利用 → 発信改善」が循環する AI ワークフローを設計・運用しています。</p>
+  <div class="arch-grid">
+
+    <article class="arch-item">
+      <div class="arch-img"><img src="images/claude.png" alt="Claude Code Workflow 運用画面" loading="lazy"></div>
+      <div class="video-meta"><span class="tag">AI Workflow</span><span class="tag tag--tool">Claude Code</span><span class="label">— Workflow 01</span></div>
+      <h3>Claude Code Workflow</h3>
+      <p class="stack">Claude Code  /  自然言語指示  /  ポートフォリオ更新  /  投稿生成システム</p>
+      <p class="caption" style="margin: 0 2rem 2rem;">▲ AIへ自然言語で構造変更・記事追加・設計変更を指示し、ポートフォリオや投稿生成システムを更新している実際の運用画面です。</p>
+    </article>
+
+    <article class="arch-item">
+      <div class="arch-img"><img src="images/Notion.png" alt="Notion AI Memory 投稿管理画面" loading="lazy"></div>
+      <div class="video-meta"><span class="tag">Knowledge Base</span><span class="tag tag--tool">Notion</span><span class="label">— Workflow 02</span></div>
+      <h3>Notion AI Memory</h3>
+      <p class="stack">Notion API  /  投稿管理  /  人格設定  /  AI記憶領域</p>
+      <p class="caption" style="margin: 0 2rem 2rem;">▲ 投稿・人格設定・過去コンテンツを蓄積し、AI が再利用可能な記憶領域として運用している Notion データベースの実画面です。</p>
+    </article>
+
+    <article class="arch-item">
+      <div class="arch-img"><img src="images/GitHub.png" alt="GitHub Knowledge Management 画面" loading="lazy"></div>
+      <div class="video-meta"><span class="tag">Version Control</span><span class="tag tag--tool">GitHub</span><span class="label">— Workflow 03</span></div>
+      <h3>GitHub Knowledge Management</h3>
+      <p class="stack">GitHub  /  プロンプト管理  /  AI設計  /  投稿生成システム</p>
+      <p class="caption" style="margin: 0 2rem 2rem;">▲ プロンプト・AI設計・投稿生成システムを継続管理している GitHub リポジトリの実画面です。</p>
+    </article>
+
+    <article class="arch-item">
+      <div class="arch-img"><img src="images/PersonaPromptDesign.png" alt="AI Persona Prompt Design 設計書" loading="lazy"></div>
+      <div class="video-meta"><span class="tag">Prompt Design</span><span class="tag tag--tool">Claude</span><span class="label">— Workflow 04</span></div>
+      <h3>AI Persona Prompt Design</h3>
+      <p class="stack">プロンプトエンジニアリング  /  人格設計  /  投稿ルール定義  /  トーン設計</p>
+      <p class="caption" style="margin: 0 2rem 2rem;">▲ 投稿時間帯・感情トーン・口調・ハッシュタグ・画像ルールまで定義し、「Sayakaらしさ」を維持するための AI 人格プロンプトを設計した実際のドキュメントです。</p>
+    </article>
+
+    <article class="arch-item">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; aspect-ratio: 16/9; overflow: hidden; background: var(--charcoal);">
+        <img src="images/sayaka1.png" alt="AI Generated Output - Threads・Instagram生成画面" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position: top;">
+        <img src="images/sayaka2.png" alt="AI Generated Output - リール・BGM・画像プロンプト生成画面" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position: top;">
+      </div>
+      <div class="video-meta"><span class="tag">AI Output</span><span class="tag tag--tool">Claude API</span><span class="tag tag--tool">Notion</span><span class="label">— Workflow 05</span></div>
+      <h3>AI Generated Output</h3>
+      <p class="stack">Claude API  /  Notion API  /  Threads  /  Instagram  /  リール  /  画像生成プロンプト</p>
+      <p class="caption" style="margin: 0 2rem 2rem;">▲ Threads・Instagram・リール文・BGM・画像生成プロンプトを一括生成し、Notion へ蓄積している実際の出力画面です。</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- 
   【アーキテクチャセクション】
   システムの構成図（Miro, Dify, Make等）を紹介し、設計の意図を解説します。
 -->
-<section style="background: var(--warm-white);">
+<section style="background: var(--cream);">
   <p class="section-label">Architecture</p>
   <h2 class="section-title">構成図・設計図</h2>
   <div class="divider"></div>
